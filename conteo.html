@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Técnicas de conteo — Calculadora de Probabilidades</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" aria-label="Sidebar">
+                <button class="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            <div class="brand"><a href="index.html" style="color:inherit;text-decoration:none"><img src="assets/img/LogoEs.png" alt="Calculadora de Probabilidades" class="app-logo"></a></div>
+            <nav class="sidebar-nav">
+                <a class="side-link" href="index.html" title="Inicio"><i class="bi bi-house-door-fill" style="font-size:20px"></i><span class="side-label">Inicio</span></a>
+                <a class="side-link active" href="conteo.html" title="Conteo"><i class="bi bi-calculator-fill" style="font-size:20px"></i><span class="side-label">Técnicas de conteo</span></a>
+                <a class="side-link" href="probBasica.html" title="Prob. básica"><i class="bi bi-pie-chart-fill" style="font-size:20px"></i><span class="side-label">Probabilidad básica</span></a>
+                <a class="side-link" href="condicional.html" title="Condicional"><i class="bi bi-diagram-3-fill" style="font-size:20px"></i><span class="side-label">Condicional</span></a>
+                <a class="side-link" href="bayes.html" title="Bayes"><i class="bi bi-activity" style="font-size:20px"></i><span class="side-label">Bayes</span></a>
+                <a class="side-link" href="discretas.html" title="Discretas"><i class="bi bi-bar-chart-fill" style="font-size:20px"></i><span class="side-label">Distribuciones discretas</span></a>
+                <a class="side-link" href="continuas.html" title="Continuas"><i class="bi bi-cloud-download-fill" style="font-size:20px"></i><span class="side-label">Distribuciones continuas</span></a>
+                <a class="side-link" href="acerca.html" title="Acerca"><i class="bi bi-info-circle-fill" style="font-size:20px"></i><span class="side-label">Acerca</span></a>
+            </nav>
+            <div class="sidebar-footer"></div>
+        </aside>
+        <div class="main-content">
+
+    <main class="container my-5">
+        <section>
+            <h2>Técnicas de conteo</h2>
+            <p>Permutaciones y combinaciones permiten contar arreglos y selecciones. Usa los formularios para calcular y visualizar resultados.</p>
+        </section>
+
+        <div class="row mt-4">
+            <div class="col-lg-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5>Permutaciones (n!)</h5>
+                        <p>Fórmula: \(P(n)=n!\)</p>
+                        <div class="mb-3">
+                            <label class="form-label">n</label>
+                            <input id="perm-n" type="number" class="form-control" min="0" value="5">
+                        </div>
+                        <button id="perm-calc" class="btn btn-primary">Calcular Permutación</button>
+                        <div id="perm-result" class="mt-3"></div>
+                        <div id="perm-explain" class="mt-3 answer-box"></div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5>Permutaciones con r (nPr)</h5>
+                        <p>Fórmula: \(P(n,r)=\dfrac{n!}{(n-r)!}\)</p>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label class="form-label">n</label>
+                                <input id="pr-n" type="number" class="form-control" min="0" value="5">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label">r</label>
+                                <input id="pr-r" type="number" class="form-control" min="0" value="3">
+                            </div>
+                        </div>
+                        <button id="pr-calc" class="btn btn-primary">Calcular nPr</button>
+                        <div id="pr-result" class="mt-3"></div>
+                        <div id="pr-explain" class="mt-3 answer-box"></div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5>Combinaciones (nCr)</h5>
+                        <p>Fórmula: \({n \choose r}=\dfrac{n!}{r!(n-r)!}\)</p>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label class="form-label">n</label>
+                                <input id="cr-n" type="number" class="form-control" min="0" value="10">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label">r</label>
+                                <input id="cr-r" type="number" class="form-control" min="0" value="3">
+                            </div>
+                        </div>
+                        <button id="cr-calc" class="btn btn-primary">Calcular nCr</button>
+                        <button id="cr-plot" class="btn btn-outline-secondary ms-2">Graficar distribución de C(n,k)</button>
+                        <div id="cr-result" class="mt-3"></div>
+                        <div id="cr-explain" class="mt-3 answer-box"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5>Interpretación y ejemplo</h5>
+                        <div id="conteo-interpretacion">Ingresa valores y pulsa calcular para ver la interpretación del resultado.</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Gráfica</h5>
+                        <canvas id="conteoChart" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+            <footer class="bg-light py-3">
+                <div class="container text-center small">Proyecto Estadística 2 — Calculadora de probabilidades</div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        window.MathJax = { tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] } };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
